@@ -212,6 +212,9 @@ function ButtonSizes() {
           <Fab mx={2} size="small" color="secondary" aria-label="Add">
             <AddIcon />
           </Fab>
+          <IconButton mx={2} size ="small" color="secondary" aria-label="Delete">
+            <DeleteIcon fontSize="small" />
+          </IconButton>
           <Fab mx={2} size="medium" color="secondary" aria-label="Add">
             <AddIcon />
           </Fab>

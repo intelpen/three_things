@@ -1,0 +1,16 @@
+{
+  "users_list":[
+    {
+      "user_id":1,
+      "user_name": "adrian",
+      "user_password": "adrian_parola",
+      "role": "admin"
+    },
+    {
+      "user_id":2,
+      "user_name": "mishu",
+      "user_password": "mishu_parola",
+      "role": "admin"
+    }
+  ]
+}

@@ -59,6 +59,10 @@ const Settings = async(() => import("../pages/pages/Settings"));
 const Tasks = async(() => import("../pages/pages/Tasks"));
 const Projects = async(() => import("../pages/pages/Projects"));
 
+// MainPage component
+const MainPage = async(() => import("../pages/main_site/MainPage"));
+
+
 // Tables components
 const SimpleTable = async(() => import("../pages/tables/SimpleTable"));
 const AdvancedTable = async(() => import("../pages/tables/AdvancedTable"));
@@ -92,6 +96,9 @@ const dashboardsRoutes = {
     }
   ]
 };
+
+
+
 
 const pagesRoutes = {
   id: "Pages",
@@ -248,6 +255,8 @@ const componentsRoutes = {
   ]
 };
 
+
+
 const formsRoutes = {
   id: "Forms",
   path: "/forms",
@@ -338,6 +347,20 @@ const mapsRoutes = {
   ]
 };
 
+const mainPagesRoutes = {
+  id: "MainPages",
+  path: "/main_site",
+  icon: <Layout />,
+  children: [
+    {
+      path: "/main_site/MainPage",
+      name: "MainPage",
+      component: MainPage,
+    },
+  ]
+};
+
+
 // This route is not visisble in the sidebar
 const privateRoutes = {
   id: "Private",
@@ -360,8 +383,10 @@ export const dashboard = [
 ];
 
 export const auth = [authRoutes];
+export const mainPages = [mainPagesRoutes]
 
 export default [
+  mainPagesRoutes,
   dashboardsRoutes,
   pagesRoutes,
   authRoutes,

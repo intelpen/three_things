@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title" : "Three rules for Feng Shui",
+    "things" :["Eat Well", "Sleep Well", "Do not give a f..."],
+    "author_id" : 1
+  },
+  {
+    "id": 2,
+    "title" : "Three rules for Great Shape",
+    "things" :["Wake Up Early", "Do 100 push-ups", "Do not eat all the fridge"],
+    "author_id" : 2
+  },
+  {
+    "id": 3,
+    "title" : "Three rules for Anything",
+    "things" :["Do not do this", "Do that", "Repeat"],
+    "author_id" : 1
+  },
+  {
+    "id": 4,
+    "title" : "Three rules for being on time in meetings",
+    "things" :["Put a reminder", "Add an alarm", "Go when that alarm rings"],
+    "author_id" : 1
+  }
+]

@@ -1,7 +1,7 @@
-import React from "react";
+import React, {Component} from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-
+import {connect} from "react-redux";
 import {
   Avatar,
   Checkbox,
@@ -14,7 +14,10 @@ import {
   Typography
 } from "@material-ui/core";
 import { spacing } from "@material-ui/system";
-
+import {pink} from "@material-ui/core/colors";
+import {Star as StarIcon} from "@material-ui/icons";
+import {users_list} from "../../data/users";
+import {setUser} from "../../redux/actions/userActions";
 const Button = styled(MuiButton)(spacing);
 
 const Wrapper = styled(Paper)`
@@ -32,56 +35,106 @@ const BigAvatar = styled(Avatar)`
   margin: 0 auto ${props => props.theme.spacing(5)}px;
 `;
 
-function SignIn() {
-  return (
-    <Wrapper>
-      <BigAvatar alt="Lucy" src="/static/img/avatars/avatar-1.jpg" />
+const PinkBigAvatar = styled(BigAvatar)`
+  background-color: ${pink[500]};
+`;
 
-      <Typography component="h1" variant="h4" align="center" gutterBottom>
-        Welcome back, Lucy!
-      </Typography>
-      <Typography component="h2" variant="body1" align="center">
-        Sign in to your account to continue
-      </Typography>
-      <form>
-        <FormControl margin="normal" required fullWidth>
-          <InputLabel htmlFor="email">Email Address</InputLabel>
-          <Input id="email" name="email" autoComplete="email" autoFocus />
-        </FormControl>
-        <FormControl margin="normal" required fullWidth>
-          <InputLabel htmlFor="password">Password</InputLabel>
-          <Input
-            name="password"
-            type="password"
-            id="password"
-            autoComplete="current-password"
-          />
-        </FormControl>
-        <FormControlLabel
-          control={<Checkbox value="remember" color="primary" />}
-          label="Remember me"
-        />
-        <Button
-          component={Link}
-          to="/"
-          fullWidth
-          variant="contained"
-          color="primary"
-          mb={2}
-        >
-          Sign in
-        </Button>
-        <Button
-          component={Link}
-          to="/auth/reset-password"
-          fullWidth
-          color="primary"
-        >
-          Forgot password
-        </Button>
-      </form>
-    </Wrapper>
-  );
+function checkAuth(user, password) {
+  var users_list_len = users_list.length;
+  for (var i =0;i< users_list_len; i++) {
+    var my_user = users_list[i];
+    console.log("name" +my_user.user_name.toString());
+    console.log(my_user.user_password);
+    if ((my_user.user_name == user) && (my_user.user_password == password)) {
+      return true;
+    }
+  }
+  return false;
+
 }
 
-export default SignIn;
+class SignIn extends Component{
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: "user",
+      password: "******",
+      remember_me: true,
+    };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange = name => event => {
+    this.setState({[name]: event.target.value});
+  }
+
+  handleSubmit(event) {
+    let good_auth = checkAuth(this.state.user, this.state.password);
+    if (!good_auth) {
+      event.preventDefault();
+      alert("please use as password username_parola")
+    }
+    else {
+      this.props.dispatch(setUser(this.state.user));
+    }
+  }
+
+  render ()  {
+    return (
+        <Wrapper>
+          <BigAvatar alt="Guest"> <StarIcon/></BigAvatar>
+
+          <Typography component="h1" variant="h4" align="center" gutterBottom>
+            Welcome user, please log in !
+            {users_list.toString()}
+          </Typography>
+          <Typography component="h2" variant="body1" align="center">
+            Email adress or username
+          </Typography>
+          <form onSubmit={this.handleSubmit}>
+            <FormControl margin="normal" required fullWidth>
+              <InputLabel htmlFor="email">Username or Email Address</InputLabel>
+              <Input id="user" name="user" value={this.state.user} onChange={this.handleChange("user")}/>
+            </FormControl>
+            <FormControl margin="normal" required fullWidth>
+              <InputLabel htmlFor="password">Password</InputLabel>
+              <Input
+                  name="password"
+                  type="password"
+                  id="password"
+                  value={this.state.password}
+                  onChange={this.handleChange("password")}
+              />
+            </FormControl>
+            <FormControlLabel
+                control={<Checkbox value="remember" color="primary"/>}
+                label="Remember me"
+            />
+            <Button
+                fullWidth
+                component={Link}
+                to = "/main_site/MainPage"
+                variant="contained"
+                color="primary"
+                mb={2}
+                onClick = {this.handleSubmit}
+            >
+              Sign in {this.state.user.toString()}
+            </Button>
+            <Button
+                component={Link}
+                to="/auth/reset-password"
+                fullWidth
+                color="primary"
+            >
+              Forgot password
+            </Button>
+          </form>
+        </Wrapper>
+    );
+  }
+}
+
+export default connect() (SignIn);
