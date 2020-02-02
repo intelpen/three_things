@@ -103,6 +103,11 @@ class MainPage extends React.Component {
     constructor(props) {
         super(props);
         this.containers = [];
+        this.state ={
+            top_three : null,
+            hot_rules : null,
+            current_user_rules :null,
+        }
     }
 
     onContainerReady = container => {
@@ -111,12 +116,37 @@ class MainPage extends React.Component {
 
     componentDidMount() {
         dragula(this.containers);
+        fetch("http://localhost:8199/list_of_things/?author=mishu").then(response=>response.json()).then((json) =>
+        {
+            console.log(json);
+            this.setState({current_user_rules:json})
+        });
+        fetch("http://localhost:8199/list_of_things/?_sort=votes_positivie&_limit=3").then(response=>response.json()).then((json) =>
+        {
+            console.log(json);
+            this.setState({top_three:json})
+        });
+        fetch("http://localhost:8199/list_of_things/?_sort=hotness&_order=asc&_limit=3").then(response=>response.json()).then((json) =>
+        {
+            console.log(json);
+            this.setState({hot_rules:json})
+        });
+
     }
 
-    render = () => (
-
+    render() {
+        const empty_rule = {
+            "id": 2,
+            "title" : "Three rules for Great Shape",
+            "things" :["Wake Up Early", "Do 100 push-ups", "Do not eat all the fridge"],
+            "author_id" : 2,
+            "votes_positive" : 1,
+            "votes_negative" : 0,
+            "hotness": 2
+        }
+        return (
         <React.Fragment>
-
+            {console.log(this.state)}
             <Typography variant="h3" gutterBottom display="inline"  align-items={"center"} justify={"center"}>
                 Welcome to three things, {this.props.user_info.currentUser.toString()} !
             </Typography>
@@ -124,30 +154,32 @@ class MainPage extends React.Component {
 
             <Grid container spacing={12} align-items={"center"} justify={"center"}>
                 <Grid item xs={8} lg={8} xl={8} >
+
                     <Lane
                         title="Top 3 Rules Overall"
                         onContainerLoaded={this.onContainerReady}
                     >
-                        <ThreeRule rule={list_of_three_things[0] }/>
-                        <ThreeRule rule={list_of_three_things[1]}  />
-                        <ThreeRule rule={list_of_three_things[0] } />
+                        <ThreeRule rule={this.state.top_three==null?empty_rule:this.state.top_three[0] }/>
+                        <ThreeRule rule={this.state.top_three==null?empty_rule:this.state.top_three[1] }/>
+                        <ThreeRule rule={this.state.top_three==null?empty_rule:this.state.top_three[2] }/>
                     </Lane>
                 </Grid>
 
                 <Grid item xs={8} lg={8} xl={8} >
                     <Lane
                         title="Hot rules"
-                        description="New and popular rules"
+                        description="New and popular rules"adrianuser
                         onContainerLoaded={this.onContainerReady}
                     >
-                        <ThreeRule rule={list_of_three_things[1] }/>
-                        <ThreeRule rule={list_of_three_things[2]}  />
-                        <ThreeRule rule={list_of_three_things[3] } />
+                        <ThreeRule rule={this.state.hot_rules==null?empty_rule:this.state.top_three[0] }/>
+                        <ThreeRule rule={this.state.hot_rules==null?empty_rule:this.state.top_three[1] }/>
+                        <ThreeRule rule={this.state.hot_rules==null?empty_rule:this.state.top_three[2] }/>
                     </Lane>
                 </Grid>
             </Grid>
         </React.Fragment>
-    );
+    )
+    };
 }
 
 export default connect(store => ({ user_info: store.userReducer }))(MainPage);

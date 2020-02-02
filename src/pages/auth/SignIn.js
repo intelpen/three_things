@@ -60,7 +60,9 @@ class SignIn extends Component{
       user: "user",
       password: "******",
       remember_me: true,
-    };
+
+  };
+    this.data ="initial_data";
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -80,6 +82,13 @@ class SignIn extends Component{
       this.props.dispatch(setUser(this.state.user));
     }
   }
+  componentWillMount() {
+    fetch("http://localhost:8199/list_of_things/?author=mishu").then(response=>response.json()).then((json) =>
+    {
+      console.log(json);
+    this.setState({data:json})
+    });
+  }
 
   render ()  {
     return (
@@ -88,7 +97,8 @@ class SignIn extends Component{
 
           <Typography component="h1" variant="h4" align="center" gutterBottom>
             Welcome user, please log in !
-            {users_list.toString()}
+            {this.state.data?this.state.data[0].title.toString():"Still Fetching"}
+            {console.log(this)}
           </Typography>
           <Typography component="h2" variant="body1" align="center">
             Email adress or username
