@@ -27,38 +27,12 @@
       "hotness": 2
     },
     {
-      "id": 3,
-      "title": "Three rules for Anything",
-      "things": [
-        "Do not do this",
-        "Do that",
-        "Repeat"
-      ],
-      "author": "adrian",
-      "votes_positive": 2,
-      "votes_negative": 2,
-      "hotness": 4
-    },
-    {
-      "id": 4,
-      "title": "Three rules for being on time in meetings",
-      "things": [
-        "Put a reminder",
-        "Add an alarm",
-        "Go when that alarm rings"
-      ],
-      "author": "adrian",
-      "votes_positive": 0,
-      "votes_negative": 1,
-      "hotness": 1
-    },
-    {
       "id": 200,
-      "title": "Three rules for Somethig",
+      "title": "Modificat Three rules for Somethig",
       "things": [
-        "Early",
+        "Early Modifs",
         "push-ups",
-        "Do not eat"
+        "Early"
       ],
       "author": "adrian",
       "votes_positive": 1,
@@ -74,19 +48,6 @@
         "Hold your breath"
       ],
       "author": "mishu",
-      "votes_positive": 0,
-      "votes_negative": 0,
-      "hotness": 10
-    },
-    {
-      "id": 202,
-      "title": "Three Rules for what ?",
-      "things": [
-        "Skip the line",
-        "Jump Around",
-        "Hold your breath"
-      ],
-      "author": "adrian",
       "votes_positive": 0,
       "votes_negative": 0,
       "hotness": 10

@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import "react-dragula/dist/dragula.css";
 import userReducer from "../../redux/reducers/userReducers";
+import { withRouter } from "react-router";
 import {
     Avatar as MuiAvatar,
     Breadcrumbs as MuiBreadcrumbs,
@@ -40,6 +41,7 @@ import { spacing } from "@material-ui/system";
 
 import dragula from "react-dragula";
 import {connect} from "react-redux";
+import {Link as RouterLink} from "react-router-dom";
 const Fab = styled(MuiFab)(spacing);
 
 const IconButton = styled(MuiIconButton)(spacing);
@@ -137,7 +139,30 @@ class ThreeRule extends React.Component
 {
     constructor(props) {
         super(props);
+        this.handleEdit = this.handleEdit.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
     }
+    handleEdit() {
+        console.log("Moving to "+ this.props.rule.id);
+        //send to redux the edit rule
+        this.props.history.push('/edit-rule/'+ this.props.rule.id)
+    }
+
+    handleDelete(event) {
+        console.log("Delete "+ this.props.rule.id);
+        console.log(this.props.handler)
+        //send to redux the edit rule
+        fetch("http://localhost:8199/list_of_things/"+ this.props.rule.id ,{
+            "headers":{
+                "Accept":"application/json",
+                "Content-type" : "application/json"
+            },
+            "method":"DELETE"
+        }).then((response) => response.json()).then((response) => console.log(response));
+        console.log(this.props)
+        this.props.handler(event);
+    }
+
     render() {
         var rule = this.props.rule;
         return (
@@ -192,14 +217,15 @@ class ThreeRule extends React.Component
                                 <ShareTwitterIcon/>
                             </BigBlueAvatar>
                             {rule.author == this.props.user_info.currentUser ?
-                                (<BigGreenAvatar mx={2} aria-label="Edit">
+                                (<BigGreenAvatar mx={2} aria-label="Edit" onClick={this.handleEdit}>
                                     <Edit3Icon/>
-                                </BigGreenAvatar>) : null}
+                                </BigGreenAvatar>)
+                                : null}
                             <BigGreyAvatar mx={2} aria-label="DisLike">
                                 <FrownIcon/>
                             </BigGreyAvatar>
                             {rule.author == this.props.user_info.currentUser ?
-                                (<BigGreyAvatar mx={2} aria-label="Delete">
+                                (<BigGreyAvatar mx={2} aria-label="Delete" onClick = {this.handleDelete} to="/">
                                 <DeleteIcon/>
                                 </BigGreyAvatar>):null}
 
@@ -210,4 +236,4 @@ class ThreeRule extends React.Component
         );
     }
 }
-export default connect(store => ({ user_info: store.userReducer })) (ThreeRule);
+export default withRouter(connect(store => ({ user_info: store.userReducer }))(ThreeRule));

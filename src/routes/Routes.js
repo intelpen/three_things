@@ -13,6 +13,7 @@ import async from "../components/Async";
 import {setUser} from "../redux/actions/userActions";
 const SignIn = async(() => import("../pages/auth/SignIn"));
 const CreateThreeRule = async(() => import("../pages/main_site/CreateThreeRule"));
+const EditThreeRule = async(() => import("../pages/main_site/EditThreeRule"));
 const MainPage = async(() => import("../pages/main_site/MainPage"));
 const childRoutes = (Layout, routes) =>
     routes.map(({ children, path, component: Component }, index) =>
@@ -112,6 +113,12 @@ class Routes extends Component {
                         layout = {MainPageLayout}
                         exact
                         component={CreateThreeRule}
+                    />
+                    <RestrictedRoute
+                        path="/edit-rule/:id"
+                        layout = {MainPageLayout}
+                        exact
+                        component={EditThreeRule}
                     />
                     <Route
                         render={() => (

@@ -112,7 +112,7 @@ class UserLane extends React.Component {
                         description="All my rules"
                         onContainerLoaded={this.props.onContainerLoaded}
                     >
-                        {rules.map(rule => <ThreeRule rule={rule}/>)}
+                        {rules.map(rule => <ThreeRule rule={rule} handler ={this.props.handler} />)}
                     </Lane>
                 </Grid>
             )
@@ -149,13 +149,14 @@ class MainPage extends React.Component {
             current_user_rules :null,
             loading_top_three :true
         }
+        this.handleDeleteChild = this.handleDeleteChild.bind(this);
+        this.reloadDataFromServer = this.reloadDataFromServer.bind(this);
     }
 
     onContainerReady = container => {
         this.containers.push(container);
     };
-    componentDidMount() {
-
+    reloadDataFromServer() {
         fetch("http://localhost:8199/list_of_things/?author="+this.props.user_info.currentUser).then(response=>response.json()).then((json) =>
         {
             console.log(json);
@@ -172,7 +173,13 @@ class MainPage extends React.Component {
             this.setState({hot_rules:json});
         });
     }
+    componentDidMount() {
+        this.reloadDataFromServer()
+    }
 
+    handleDeleteChild() {
+        this.reloadDataFromServer();
+    }
     render() {
         const empty_rule = {
             "id": 2,
@@ -202,9 +209,9 @@ class MainPage extends React.Component {
                         description="New and popular rules"
                         onContainerLoaded={this.onContainerReady}
                     >
-                        <ThreeRule rule={loading_top_three?empty_rule:this.state.top_three[0] }/>
-                        <ThreeRule rule={loading_top_three?empty_rule:this.state.top_three[1] }/>
-                        <ThreeRule rule={loading_top_three?empty_rule:this.state.top_three[2] }/>
+                        <ThreeRule rule={loading_top_three?empty_rule:this.state.top_three[0]} handler ={this.handleDeleteChild}/>
+                        <ThreeRule rule={loading_top_three?empty_rule:this.state.top_three[1]} handler ={this.handleDeleteChild}/>
+                        <ThreeRule rule={loading_top_three?empty_rule:this.state.top_three[2]} handler ={this.handleDeleteChild} />
 
                     </Lane>
 
@@ -216,13 +223,14 @@ class MainPage extends React.Component {
                         description="New and popular rules"
                         onContainerLoaded={this.onContainerReady}
                     >
-                        <ThreeRule rule={this.state.hot_rules==null?empty_rule:this.state.hot_rules[0] }/>
-                        <ThreeRule rule={this.state.hot_rules==null?empty_rule:this.state.hot_rules[1] }/>
-                        <ThreeRule rule={this.state.hot_rules==null?empty_rule:this.state.hot_rules[2] }/>
+                        <ThreeRule rule={this.state.hot_rules==null?empty_rule:this.state.hot_rules[0] } handler ={this.handleDeleteChild} />
+                        <ThreeRule rule={this.state.hot_rules==null?empty_rule:this.state.hot_rules[1] } handler ={this.handleDeleteChild} />
+                        <ThreeRule rule={this.state.hot_rules==null?empty_rule:this.state.hot_rules[2] } handler ={this.handleDeleteChild} />
                     </Lane>
                 </Grid>
                 <UserLane rules = {this.state.current_user_rules}
                           onContainerLoaded={this.onContainerReady}
+                          handler ={this.handleDeleteChild}
                 />
             </Grid>
         </React.Fragment>

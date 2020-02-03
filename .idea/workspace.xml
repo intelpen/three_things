@@ -2,18 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="984093f6-37d5-42e5-ad3a-135affb516bc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/pages/main_site/EditThreeRule.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UserMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UserMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/auth/SignIn.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/auth/SignIn.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/main_site/CreateThreeRule.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/main_site/CreateThreeRule.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/main_site/MainPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/main_site/MainPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/main_site/ThreeRule.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/main_site/ThreeRule.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/RestrictedRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/RestrictedRoute.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/Routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,17 +38,19 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../three_rules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/pages/main_site" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/redux/reducers" />
-      <recent name="$PROJECT_DIR$/src/redux/actions" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/pages/main_site" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/pages/main_site" />
+      <recent name="$PROJECT_DIR$/src/redux/reducers" />
+      <recent name="$PROJECT_DIR$/src/redux/actions" />
     </key>
   </component>
   <component name="RunManager">
@@ -87,7 +85,8 @@
       <workItem from="1580591056775" duration="599000" />
       <workItem from="1580642167105" duration="9386000" />
       <workItem from="1580658908423" duration="9264000" />
-      <workItem from="1580738023851" duration="17049000" />
+      <workItem from="1580738023851" duration="17313000" />
+      <workItem from="1580762565377" duration="8752000" />
     </task>
     <task id="LOCAL-00001" summary="First version with Logins">
       <created>1580165394466</created>
@@ -110,7 +109,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580658871127</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Login and add elements">
+      <created>1580758305586</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1580758305586</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -120,12 +126,14 @@
     <MESSAGE value="First version with Logins" />
     <MESSAGE value="Port 3199" />
     <MESSAGE value="Link to json-server" />
-    <option name="LAST_COMMIT_MESSAGE" value="Link to json-server" />
+    <MESSAGE value="Login and add elements" />
+    <option name="LAST_COMMIT_MESSAGE" value="Login and add elements" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="612" y="304" width="860" height="807" key="CommitChangelistDialog2" timestamp="1580658870988">
-      <screen x="67" y="27" width="3373" height="1413" />
+    <state x="2230" y="212" width="1389" height="617" key="CommitChangelistDialog2" timestamp="1580758305409">
+      <screen x="1920" y="0" width="1920" height="1080" />
     </state>
+    <state x="2230" y="212" width="1389" height="617" key="CommitChangelistDialog2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1580758305409" />
     <state x="612" y="304" width="860" height="807" key="CommitChangelistDialog2/67.27.3373.1413/3440.0.1920.1080@67.27.3373.1413" timestamp="1580658870988" />
     <state x="2696" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1580208635247">
       <screen x="1920" y="0" width="1920" height="1080" />
@@ -147,19 +155,28 @@
       <screen x="67" y="27" width="3373" height="1413" />
     </state>
     <state width="1837" height="466" key="GridCell.Tab.0.right/67.27.3373.1413/3440.0.1920.1080@67.27.3373.1413" timestamp="1580156941043" />
-    <state x="642" y="444" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1580165501591">
+    <state x="1979" y="367" key="SettingsEditor" timestamp="1580762910412">
       <screen x="67" y="27" width="3373" height="1413" />
     </state>
+    <state x="1979" y="367" key="SettingsEditor/67.27.3373.1413/3440.0.1920.1080@67.27.3373.1413" timestamp="1580762910412" />
+    <state x="2247" y="319" width="572" height="404" key="Vcs.Push.Dialog.v2" timestamp="1580758324940">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2247" y="319" width="572" height="404" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1580758324940" />
     <state x="642" y="444" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.3373.1413/3440.0.1920.1080@67.27.3373.1413" timestamp="1580165501591" />
-    <state x="167" y="125" width="1726" height="1215" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1580658176942">
+    <state x="165" y="126" width="1726" height="1215" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1580771259295">
       <screen x="67" y="27" width="3373" height="1413" />
     </state>
-    <state x="167" y="125" width="1726" height="1215" key="com.intellij.history.integration.ui.views.FileHistoryDialog/67.27.3373.1413/3440.0.1920.1080@67.27.3373.1413" timestamp="1580658176942" />
+    <state x="165" y="126" width="1726" height="1215" key="com.intellij.history.integration.ui.views.FileHistoryDialog/67.27.3373.1413/3440.0.1920.1080@67.27.3373.1413" timestamp="1580771259295" />
     <state x="1149" y="482" key="com.intellij.ide.util.TipDialog" timestamp="1580153139926">
       <screen x="67" y="27" width="3373" height="1413" />
     </state>
     <state x="616" y="366" key="com.intellij.ide.util.TipDialog/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1580118857641" />
     <state x="1149" y="482" key="com.intellij.ide.util.TipDialog/67.27.3373.1413/3440.0.1920.1080@67.27.3373.1413" timestamp="1580153139926" />
+    <state x="2681" y="472" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1580758333582">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2681" y="472" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1580758333582" />
     <state x="67" y="27" width="2674" height="1357" key="dock-window-1" timestamp="1580153214519">
       <screen x="67" y="27" width="3373" height="1413" />
     </state>

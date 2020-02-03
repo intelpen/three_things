@@ -54,19 +54,33 @@ function checkAuth(user, password) {
 
 }
 
-class CreateThreeRule extends Component{
+class EditThreeRule extends Component{
     constructor(props) {
         super(props);
         this.state = {
-            title: "Three Rules for what ?",
-            first_thing: "Skip the line",
-            second_thing: "Jump Around",
-            third_thing: "Hold your breath",
+            rule_id : props.match.params.id,
+            title :"loading",
+            first_thing :"loading",
+            second_thing : "loading",
+            third_thing : "loading"
         };
-        this.data ="initial_data";
-
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    componentDidMount() {
+        console.log(this.props.match.params.id);
+        console.log(this.props.location.state);
+        fetch("http://localhost:8199/list_of_things/"+this.props.match.params.id).then(response=>response.json()).then((rule_json) =>
+        {   console.log("Rule Json");
+            console.log(rule_json);
+            this.setState({rule:rule_json});
+            this.setState({title:rule_json.title});
+            this.setState({first_thing:rule_json.things[0]});
+            this.setState({second_thing:rule_json.things[1]});
+            this.setState({third_thing:rule_json.things[0]});
+
+        })
     }
 
     handleChange = name => event => {
@@ -74,37 +88,22 @@ class CreateThreeRule extends Component{
     }
 
     handleSubmit(event) {
-
-        const empty_rule = {
-            id : this.state.max_id,
-            title : this.state.title,
-            things :[this.state.first_thing, this.state.second_thing, this.state.third_thing],
-            author : this.props.user_info.currentUser,
-            votes_positive : 0,
-            votes_negative : 0,
-            hotness: 10
-        };
-        console.log(empty_rule);
-        var jsonified_emtyp_rule = JSON.stringify(empty_rule);
-        console.log(jsonified_emtyp_rule)
-        fetch("http://localhost:8199/list_of_things/" ,{
-            "body": jsonified_emtyp_rule,
+        var rule = this.state.rule;
+        rule.title = this.state.title;
+        rule.things = [this.state.first_thing,this.state.second_thing, this.state.third_thing]
+        console.log("just rule rule")
+        console.log(rule);
+        var jsonified_rule = JSON.stringify(rule);
+        console.log("json rule")
+        console.log(jsonified_rule)
+        fetch("http://localhost:8199/list_of_things/"+ rule.id ,{
+            "body": jsonified_rule,
             "headers":{
                 "Accept":"application/json",
                 "Content-type" : "application/json"
             },
-            "method":"POST"
+            "method":"PUT"
         }).then((response) => response.json()).then((response) => console.log(response));
-        this.setState({max_id : this.state.max_id+1})
-
-    }
-    componentWillMount() {
-        fetch("http://localhost:8199/list_of_things?_sort=id&_order=desc&_limit=1").then(response=>response.json()).then((json) =>
-        {
-            console.log(json);
-            let max_id =  json[0].id;
-            this.setState({max_id:max_id+1})
-        });
     }
 
     render ()  {
@@ -113,11 +112,11 @@ class CreateThreeRule extends Component{
                 <BigAvatar alt="Guest"> <StarIcon/></BigAvatar>
 
                 <Typography component="h1" variant="h4" align="center" gutterBottom>
-                    Create a new rule
+                    Edit your rule rule
                     {console.log(this)}
                 </Typography>
                 <Typography component="h2" variant="body1" align="center">
-                    Tell us your great rules !
+                    Changing rules during the games ? Yup, you can do that :) ?
                 </Typography>
                 <form onSubmit={this.handleSubmit}>
                     <FormControl margin="normal" required fullWidth>
@@ -145,7 +144,7 @@ class CreateThreeRule extends Component{
                         mb={2}
                         onClick = {this.handleSubmit}
                     >
-                        Publish your rule, {this.props.user_info.currentUser!=null?this.props.user_info.currentUser:"guest"} !
+                        Save your modified rule, {this.props.user_info.currentUser!=null?this.props.user_info.currentUser:"guest"} !
                     </Button>
                 </form>
             </Wrapper>
@@ -153,4 +152,4 @@ class CreateThreeRule extends Component{
     }
 }
 
-export default connect(store => ({ user_info: store.userReducer })) (CreateThreeRule);
+export default connect(store => ({ user_info: store.userReducer })) (EditThreeRule);
