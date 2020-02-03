@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="984093f6-37d5-42e5-ad3a-135affb516bc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/pages/main_site/EditThreeRule.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/auth/SignIn.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/auth/SignIn.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/main_site/CreateThreeRule.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/main_site/CreateThreeRule.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/main_site/EditThreeRule.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/main_site/EditThreeRule.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/main_site/MainPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/main_site/MainPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/main_site/ThreeRule.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/main_site/ThreeRule.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/Routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Routes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +85,7 @@
       <workItem from="1580642167105" duration="9386000" />
       <workItem from="1580658908423" duration="9264000" />
       <workItem from="1580738023851" duration="17313000" />
-      <workItem from="1580762565377" duration="8752000" />
+      <workItem from="1580762565377" duration="9645000" />
     </task>
     <task id="LOCAL-00001" summary="First version with Logins">
       <created>1580165394466</created>
@@ -116,7 +115,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580758305586</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Add Delete and edit rules">
+      <created>1580771515624</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1580771515624</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -127,14 +133,15 @@
     <MESSAGE value="Port 3199" />
     <MESSAGE value="Link to json-server" />
     <MESSAGE value="Login and add elements" />
-    <option name="LAST_COMMIT_MESSAGE" value="Login and add elements" />
+    <MESSAGE value="Add Delete and edit rules" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Delete and edit rules" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2230" y="212" width="1389" height="617" key="CommitChangelistDialog2" timestamp="1580758305409">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state x="612" y="304" width="1389" height="617" key="CommitChangelistDialog2" timestamp="1580771515486">
+      <screen x="67" y="27" width="3373" height="1413" />
     </state>
     <state x="2230" y="212" width="1389" height="617" key="CommitChangelistDialog2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1580758305409" />
-    <state x="612" y="304" width="860" height="807" key="CommitChangelistDialog2/67.27.3373.1413/3440.0.1920.1080@67.27.3373.1413" timestamp="1580658870988" />
+    <state x="612" y="304" width="860" height="807" key="CommitChangelistDialog2/67.27.3373.1413/3440.0.1920.1080@67.27.3373.1413" timestamp="1580771515486" />
     <state x="2696" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1580208635247">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -159,15 +166,15 @@
       <screen x="67" y="27" width="3373" height="1413" />
     </state>
     <state x="1979" y="367" key="SettingsEditor/67.27.3373.1413/3440.0.1920.1080@67.27.3373.1413" timestamp="1580762910412" />
-    <state x="2247" y="319" width="572" height="404" key="Vcs.Push.Dialog.v2" timestamp="1580758324940">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2247" y="319" width="572" height="404" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1580758324940" />
-    <state x="642" y="444" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.3373.1413/3440.0.1920.1080@67.27.3373.1413" timestamp="1580165501591" />
-    <state x="165" y="126" width="1726" height="1215" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1580771259295">
+    <state x="642" y="444" width="572" height="404" key="Vcs.Push.Dialog.v2" timestamp="1580771522490">
       <screen x="67" y="27" width="3373" height="1413" />
     </state>
-    <state x="165" y="126" width="1726" height="1215" key="com.intellij.history.integration.ui.views.FileHistoryDialog/67.27.3373.1413/3440.0.1920.1080@67.27.3373.1413" timestamp="1580771259295" />
+    <state x="2247" y="319" width="572" height="404" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1580758324940" />
+    <state x="642" y="444" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.3373.1413/3440.0.1920.1080@67.27.3373.1413" timestamp="1580771522490" />
+    <state x="164" y="126" width="1726" height="1215" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1580771525406">
+      <screen x="67" y="27" width="3373" height="1413" />
+    </state>
+    <state x="164" y="126" width="1726" height="1215" key="com.intellij.history.integration.ui.views.FileHistoryDialog/67.27.3373.1413/3440.0.1920.1080@67.27.3373.1413" timestamp="1580771525406" />
     <state x="1149" y="482" key="com.intellij.ide.util.TipDialog" timestamp="1580153139926">
       <screen x="67" y="27" width="3373" height="1413" />
     </state>
@@ -182,11 +189,11 @@
     </state>
     <state x="0" y="27" width="1522" height="1011" key="dock-window-1/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1580123639680" />
     <state x="67" y="27" width="2674" height="1357" key="dock-window-1/67.27.3373.1413/3440.0.1920.1080@67.27.3373.1413" timestamp="1580153214519" />
-    <state x="2561" y="283" width="704" height="538" key="find.popup" timestamp="1580756955338">
-      <screen x="1920" y="0" width="1920" height="1080" />
+    <state x="1193" y="397" width="1237" height="704" key="find.popup" timestamp="1580772534536">
+      <screen x="67" y="27" width="3373" height="1413" />
     </state>
     <state x="2561" y="283" width="704" height="538" key="find.popup/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1580756955338" />
-    <state x="1193" y="397" width="1237" height="704" key="find.popup/67.27.3373.1413/3440.0.1920.1080@67.27.3373.1413" timestamp="1580155765694" />
+    <state x="1193" y="397" width="1237" height="704" key="find.popup/67.27.3373.1413/3440.0.1920.1080@67.27.3373.1413" timestamp="1580772534536" />
     <state x="2577" y="253" key="run.anything.popup" timestamp="1580752104561">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>

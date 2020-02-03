@@ -152,7 +152,7 @@ class ThreeRule extends React.Component
         console.log("Delete "+ this.props.rule.id);
         console.log(this.props.handler)
         //send to redux the edit rule
-        fetch("http://localhost:8199/list_of_things/"+ this.props.rule.id ,{
+        fetch("http://localhost:3299/list_of_things/"+ this.props.rule.id ,{
             "headers":{
                 "Accept":"application/json",
                 "Content-type" : "application/json"

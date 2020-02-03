@@ -7,8 +7,8 @@
   "scripts": {
     "start": "PORT=3199 react-scripts start",
     "build": "react-scripts build",
-    "dev-server": "json-server -p 8199 db.json",
-    "dev": "PORT=3199 react-scripts start & json-server -p 8199 db.json"
+    "dev-server": "json-server -p 3299 db.json",
+    "dev": "PORT=3199 react-scripts start & json-server -p 3299 db.json"
   },
   "eslintConfig": {
     "extends": "react-app"

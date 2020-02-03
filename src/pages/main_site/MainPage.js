@@ -157,17 +157,17 @@ class MainPage extends React.Component {
         this.containers.push(container);
     };
     reloadDataFromServer() {
-        fetch("http://localhost:8199/list_of_things/?author="+this.props.user_info.currentUser).then(response=>response.json()).then((json) =>
+        fetch("http://localhost:3299/list_of_things/?author="+this.props.user_info.currentUser).then(response=>response.json()).then((json) =>
         {
             console.log(json);
             this.setState({current_user_rules:json});
         });
-        fetch("http://localhost:8199/list_of_things/?_sort=votes_positivie&_limit=3").then(response=>response.json()).then((json) =>
+        fetch("http://localhost:3299/list_of_things/?_sort=votes_positivie&_limit=3").then(response=>response.json()).then((json) =>
         {
             console.log(json);
             this.setState({top_three:json,  loading_top_three :false});
         });
-        fetch("http://localhost:8199/list_of_things/?_sort=hotness&_limit=3").then(response=>response.json()).then((json) =>
+        fetch("http://localhost:3299/list_of_things/?_sort=hotness&_limit=3").then(response=>response.json()).then((json) =>
         {
             console.log(json);
             this.setState({hot_rules:json});
