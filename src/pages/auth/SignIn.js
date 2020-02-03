@@ -86,7 +86,7 @@ class SignIn extends Component{
     }
   }
   componentWillMount() {
-    fetch("http://localhost:3299/list_of_things/?author=mishu").then(response=>response.json()).then((json) =>
+    fetch("http://127.0.0.1:3299/list_of_things/?author=mishu").then(response=>response.json()).then((json) =>
     {
       console.log(json);
     this.setState({data:json})

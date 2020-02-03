@@ -87,7 +87,7 @@ class CreateThreeRule extends Component{
         console.log(empty_rule);
         var jsonified_emtyp_rule = JSON.stringify(empty_rule);
         console.log(jsonified_emtyp_rule)
-        fetch("http://localhost:3299/list_of_things/" ,{
+        fetch("http://127.0.0.1:3299/list_of_things/" ,{
             "body": jsonified_emtyp_rule,
             "headers":{
                 "Accept":"application/json",
@@ -99,7 +99,7 @@ class CreateThreeRule extends Component{
 
     }
     componentWillMount() {
-        fetch("http://localhost:3299/list_of_things?_sort=id&_order=desc&_limit=1").then(response=>response.json()).then((json) =>
+        fetch("http://127.0.0.1:3299/list_of_things?_sort=id&_order=desc&_limit=1").then(response=>response.json()).then((json) =>
         {
             console.log(json);
             let max_id =  json[0].id;
