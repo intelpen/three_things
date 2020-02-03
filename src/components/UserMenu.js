@@ -4,7 +4,7 @@ import {Power} from "react-feather";
 import {IconButton as MuiIconButton, Menu, MenuItem} from "@material-ui/core";
 import {connect} from "react-redux";
 import styled from "styled-components";
-
+import ls from 'local-storage';
 const IconButton = styled(MuiIconButton)`
   svg {
     width: 22px;
@@ -26,6 +26,7 @@ class UserMenu extends Component {
     };
     logout = () => {
         this.props.dispatch(setUser("guest"));
+        ls.set("currentLoggedUser","guest");
     }
 
     render() {

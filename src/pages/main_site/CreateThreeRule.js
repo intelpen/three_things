@@ -17,6 +17,7 @@ import { spacing } from "@material-ui/system";
 import {pink} from "@material-ui/core/colors";
 import {Star as StarIcon} from "@material-ui/icons";
 import {users_list} from "../../data/users";
+
 import {setUser} from "../../redux/actions/userActions";
 const Button = styled(MuiButton)(spacing);
 
@@ -53,12 +54,14 @@ function checkAuth(user, password) {
 
 }
 
-class SignIn extends Component{
+class CreateThreeRule extends Component{
     constructor(props) {
         super(props);
         this.state = {
-            user: "user",
-            password: "******",
+            title: "Three Rules for what ?",
+            first_thing: "Skip the line",
+            second_thing: "Jump Around",
+            third_thing: "Hold your breath",
             remember_me: true,
 
         };
@@ -73,20 +76,36 @@ class SignIn extends Component{
     }
 
     handleSubmit(event) {
-        let good_auth = checkAuth(this.state.user, this.state.password);
-        if (!good_auth) {
-            event.preventDefault();
-            alert("please use as password username_parola")
-        }
-        else {
-            this.props.dispatch(setUser(this.state.user));
-        }
+
+        const empty_rule = {
+            id : this.state.max_id,
+            title : this.state.title,
+            things :[this.state.first_thing, this.state.second_thing, this.state.third_thing],
+            author : this.props.user_info.currentUser,
+            votes_positive : 0,
+            votes_negative : 0,
+            hotness: 10
+        };
+        console.log(empty_rule);
+        var jsonified_emtyp_rule = JSON.stringify(empty_rule);
+        console.log(jsonified_emtyp_rule)
+        fetch("http://localhost:8199/list_of_things/" ,{
+            "body": jsonified_emtyp_rule,
+            "headers":{
+                "Accept":"application/json",
+                "Content-type" : "application/json"
+            },
+            "method":"POST"
+        }).then((response) => response.json()).then((response) => console.log(response));
+        this.setState({max_id : this.state.max_id+1})
+
     }
     componentWillMount() {
-        fetch("http://localhost:8199/list_of_things/?author=mishu").then(response=>response.json()).then((json) =>
+        fetch("http://localhost:8199/list_of_things?_sort=id&_order=desc&_limit=1").then(response=>response.json()).then((json) =>
         {
             console.log(json);
-            this.setState({data:json})
+            let max_id =  json[0].id;
+            this.setState({max_id:max_id+1})
         });
     }
 
@@ -96,50 +115,39 @@ class SignIn extends Component{
                 <BigAvatar alt="Guest"> <StarIcon/></BigAvatar>
 
                 <Typography component="h1" variant="h4" align="center" gutterBottom>
-                    Welcome user, please log in !
-                    {this.state.data?this.state.data[0].title.toString():"Still Fetching"}
+                    Create a new rule
                     {console.log(this)}
                 </Typography>
                 <Typography component="h2" variant="body1" align="center">
-                    Email adress or username
+                    Tell us your great rules !
                 </Typography>
                 <form onSubmit={this.handleSubmit}>
                     <FormControl margin="normal" required fullWidth>
-                        <InputLabel htmlFor="email">Username or Email Address</InputLabel>
-                        <Input id="user" name="user" value={this.state.user} onChange={this.handleChange("user")}/>
+                        <InputLabel>What is this rule about</InputLabel>
+                        <Input id="title" name="title" value    ={this.state.title} onChange={this.handleChange("title")}/>
                     </FormControl>
                     <FormControl margin="normal" required fullWidth>
-                        <InputLabel htmlFor="password">Password</InputLabel>
-                        <Input
-                            name="password"
-                            type="password"
-                            id="password"
-                            value={this.state.password}
-                            onChange={this.handleChange("password")}
-                        />
+                        <InputLabel>First thing </InputLabel>
+                        <Input id="first_thing" name="first_thing" value={this.state.first_thing} onChange={this.handleChange("first_thing")}/>
                     </FormControl>
-                    <FormControlLabel
-                        control={<Checkbox value="remember" color="primary"/>}
-                        label="Remember me"
-                    />
+                    <FormControl margin="normal" required fullWidth>
+                        <InputLabel>Second thing </InputLabel>
+                        <Input id="second_thing" name="second_thing" value={this.state.second_thing} onChange={this.handleChange("second_thing")}/>
+                    </FormControl>
+                    <FormControl margin="normal" required fullWidth>
+                        <InputLabel>Third thing </InputLabel>
+                        <Input id="third_thing" name="third_thing" value={this.state.third_thing} onChange={this.handleChange("third_thing")}/>
+                    </FormControl>
                     <Button
                         fullWidth
                         component={Link}
-                        to = "/main_site/MainPage"
+                        to = "/"
                         variant="contained"
                         color="primary"
                         mb={2}
                         onClick = {this.handleSubmit}
                     >
-                        Sign in {this.state.user.toString()}
-                    </Button>
-                    <Button
-                        component={Link}
-                        to="/auth/reset-password"
-                        fullWidth
-                        color="primary"
-                    >
-                        Forgot password
+                        Publish your rule, {this.props.user_info.currentUser!=null?this.props.user_info.currentUser:"guest"} !
                     </Button>
                 </form>
             </Wrapper>
@@ -147,4 +155,4 @@ class SignIn extends Component{
     }
 }
 
-export default connect() (SignIn);
+export default connect(store => ({ user_info: store.userReducer })) (CreateThreeRule);

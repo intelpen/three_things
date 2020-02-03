@@ -349,15 +349,11 @@ const mapsRoutes = {
 
 const mainPagesRoutes = {
   id: "MainPages",
-  path: "/main_site",
+  path: "/",
   icon: <Layout />,
-  children: [
-    {
-      path: "/main_site/MainPage",
-      name: "MainPage",
-      component: MainPage,
-    },
-  ]
+  name: "MainPage",
+  component: MainPage,
+  children:null
 };
 
 

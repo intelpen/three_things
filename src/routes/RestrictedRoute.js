@@ -24,7 +24,7 @@ function RestrictedRoute(props) {
     } else {
         return (
             <Redirect
-                to = "/auth/sign-in"
+                to = "/sign-in"
             />
         )
     }

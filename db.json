@@ -1,40 +1,185 @@
 {
-"list_of_things":[
-  {
-    "id": 1,
-    "title" : "Three rules for Feng Shui",
-    "things" :["Eat Well", "Sleep Well", "Do not give a f..."],
-    "author_id" : 1,
-    "votes_positive" : 4,
-    "votes_negative" : 6,
-    "hotness": 7
-  },
-  {
-    "id": 2,
-    "title" : "Three rules for Great Shape",
-    "things" :["Wake Up Early", "Do 100 push-ups", "Do not eat all the fridge"],
-    "author_id" : 2,
-    "votes_positive" : 1,
-    "votes_negative" : 0,
-    "hotness": 2
-  },
-  {
-    "id": 3,
-    "title" : "Three rules for Anything",
-    "things" :["Do not do this", "Do that", "Repeat"],
-    "author_id" : 1,
-    "votes_positive" : 2,
-    "votes_negative" : 2,
-    "hotness": 4
-  },
-  {
-    "id": 4,
-    "title" : "Three rules for being on time in meetings",
-    "things" :["Put a reminder", "Add an alarm", "Go when that alarm rings"],
-    "author_id" : 1,
-    "votes_positive" : 0,
-    "votes_negative" : 1,
-    "hotness": 1
-  }
-]
+  "list_of_things": [
+    {
+      "id": 1,
+      "title": "Three rules for Great Shape",
+      "things": [
+        "Wake Up Early",
+        "Do 100 push-ups",
+        "Do not eat all the fridge"
+      ],
+      "author": "mishu",
+      "votes_positive": 1,
+      "votes_negative": 0,
+      "hotness": 2
+    },
+    {
+      "id": 2,
+      "title": "Three rules for Great Sport",
+      "things": [
+        "Wake Up ",
+        "Do push-ups",
+        "Eat all the fridge"
+      ],
+      "author": "mishu",
+      "votes_positive": 1,
+      "votes_negative": 0,
+      "hotness": 2
+    },
+    {
+      "id": 3,
+      "title": "Three rules for Anything",
+      "things": [
+        "Do not do this",
+        "Do that",
+        "Repeat"
+      ],
+      "author": "adrian",
+      "votes_positive": 2,
+      "votes_negative": 2,
+      "hotness": 4
+    },
+    {
+      "id": 4,
+      "title": "Three rules for being on time in meetings",
+      "things": [
+        "Put a reminder",
+        "Add an alarm",
+        "Go when that alarm rings"
+      ],
+      "author": "adrian",
+      "votes_positive": 0,
+      "votes_negative": 1,
+      "hotness": 1
+    },
+    {
+      "id": 200,
+      "title": "Three rules for Somethig",
+      "things": [
+        "Early",
+        "push-ups",
+        "Do not eat"
+      ],
+      "author": "adrian",
+      "votes_positive": 1,
+      "votes_negative": 0,
+      "hotness": 2
+    },
+    {
+      "id": 201,
+      "title": "Three Rules for what ?",
+      "things": [
+        "Skip the line",
+        "Jump Around",
+        "Hold your breath"
+      ],
+      "author": "mishu",
+      "votes_positive": 0,
+      "votes_negative": 0,
+      "hotness": 10
+    },
+    {
+      "id": 202,
+      "title": "Three Rules for what ?",
+      "things": [
+        "Skip the line",
+        "Jump Around",
+        "Hold your breath"
+      ],
+      "author": "adrian",
+      "votes_positive": 0,
+      "votes_negative": 0,
+      "hotness": 10
+    },
+    {
+      "id": 203,
+      "title": "Three Rules for what ?",
+      "things": [
+        "Skip the line",
+        "Jump Around",
+        "Hold your breath"
+      ],
+      "author": "adrian",
+      "votes_positive": 0,
+      "votes_negative": 0,
+      "hotness": 10
+    },
+    {
+      "id": 204,
+      "title": "Three Rules for what ?",
+      "things": [
+        "fdfd",
+        "Jump Around",
+        "Hold your breath"
+      ],
+      "author": "adrian",
+      "votes_positive": 0,
+      "votes_negative": 0,
+      "hotness": 10
+    },
+    {
+      "id": 205,
+      "title": "Three Rules for what ?",
+      "things": [
+        "fdfd",
+        "Jump Around",
+        "Hold your breath"
+      ],
+      "author": "mishu",
+      "votes_positive": 0,
+      "votes_negative": 0,
+      "hotness": 10
+    },
+    {
+      "id": 206,
+      "title": "Three Rules for what ?",
+      "things": [
+        "rere",
+        "Jure",
+        "rere"
+      ],
+      "author": "adrian",
+      "votes_positive": 0,
+      "votes_negative": 0,
+      "hotness": 10
+    },
+    {
+      "id": 207,
+      "title": "Regula Noua",
+      "things": [
+        "nou1",
+        "nou2",
+        "nou3"
+      ],
+      "author_id": 2,
+      "votes_positive": 0,
+      "votes_negative": 0,
+      "hotness": 10
+    },
+    {
+      "id": 208,
+      "title": "Alta",
+      "things": [
+        "unu",
+        "doi",
+        "trei"
+      ],
+      "votes_positive": 0,
+      "votes_negative": 0,
+      "hotness": 10
+    },
+    {
+      "id": 209,
+      "title": "hghf",
+      "things": [
+        "dhgf",
+        "hdgf",
+        "hdgf"
+      ],
+      "author": "mishu",
+      "votes_positive": 0,
+      "votes_negative": 0,
+      "hotness": 10
+    }
+  ]
 }

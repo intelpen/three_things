@@ -187,12 +187,12 @@ class Header extends Component {
                     <SearchIconWrapper>
                       <SearchIcon/>
                     </SearchIconWrapper>
-                    <Input placeholder="Search projects…"/>
+                    <Input placeholder="Search for a rule …"/>
                   </Search>
                 </Grid>
                 <Grid item xs/>
                 <Grid item>
-                  {this.props.user_info.currentUser.toString() == "guest" ?  <Button color={"secondary"} variant="contained" href={"/auth/sign-in"}> Login/Signin</Button>: null}
+                  {this.props.user_info.currentUser.toString() == "guest" ?  <Button color={"secondary"} variant="contained" href={"/sign-in"}> Login/Signin</Button>: null}
                   <IconButton color="inherit">
                     <Indicator badgeContent={3}>
                       <MessageSquare/>

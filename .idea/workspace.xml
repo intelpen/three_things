@@ -2,14 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="984093f6-37d5-42e5-ad3a-135affb516bc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/main_site/CreateThreeRule.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/RestrictedRoute.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UserMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UserMenu.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/auth/SignIn.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/auth/SignIn.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/main_site/CreateThreeRule.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/main_site/CreateThreeRule.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/main_site/MainPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/main_site/MainPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/main_site/ThreeRule.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/main_site/ThreeRule.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/RestrictedRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/RestrictedRoute.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/Routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +85,9 @@
       <workItem from="1580404832049" duration="1515000" />
       <workItem from="1580466801809" duration="1199000" />
       <workItem from="1580591056775" duration="599000" />
-      <workItem from="1580642167105" duration="9320000" />
+      <workItem from="1580642167105" duration="9386000" />
+      <workItem from="1580658908423" duration="9264000" />
+      <workItem from="1580738023851" duration="17049000" />
     </task>
     <task id="LOCAL-00001" summary="First version with Logins">
       <created>1580165394466</created>
@@ -97,7 +103,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580165460837</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Link to json-server">
+      <created>1580658871127</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1580658871127</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -106,13 +119,14 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First version with Logins" />
     <MESSAGE value="Port 3199" />
-    <option name="LAST_COMMIT_MESSAGE" value="Port 3199" />
+    <MESSAGE value="Link to json-server" />
+    <option name="LAST_COMMIT_MESSAGE" value="Link to json-server" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="612" y="304" width="860" height="807" key="CommitChangelistDialog2" timestamp="1580165460746">
+    <state x="612" y="304" width="860" height="807" key="CommitChangelistDialog2" timestamp="1580658870988">
       <screen x="67" y="27" width="3373" height="1413" />
     </state>
-    <state x="612" y="304" width="860" height="807" key="CommitChangelistDialog2/67.27.3373.1413/3440.0.1920.1080@67.27.3373.1413" timestamp="1580165460746" />
+    <state x="612" y="304" width="860" height="807" key="CommitChangelistDialog2/67.27.3373.1413/3440.0.1920.1080@67.27.3373.1413" timestamp="1580658870988" />
     <state x="2696" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1580208635247">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -151,10 +165,18 @@
     </state>
     <state x="0" y="27" width="1522" height="1011" key="dock-window-1/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1580123639680" />
     <state x="67" y="27" width="2674" height="1357" key="dock-window-1/67.27.3373.1413/3440.0.1920.1080@67.27.3373.1413" timestamp="1580153214519" />
-    <state x="1193" y="397" width="1237" height="704" key="find.popup" timestamp="1580155765694">
-      <screen x="67" y="27" width="3373" height="1413" />
+    <state x="2561" y="283" width="704" height="538" key="find.popup" timestamp="1580756955338">
+      <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2561" y="283" width="704" height="538" key="find.popup/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1580120911069" />
+    <state x="2561" y="283" width="704" height="538" key="find.popup/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1580756955338" />
     <state x="1193" y="397" width="1237" height="704" key="find.popup/67.27.3373.1413/3440.0.1920.1080@67.27.3373.1413" timestamp="1580155765694" />
+    <state x="2577" y="253" key="run.anything.popup" timestamp="1580752104561">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2577" y="253" key="run.anything.popup/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1580752104561" />
+    <state x="2576" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1580741630814">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2576" y="257" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1580741630814" />
   </component>
 </project>

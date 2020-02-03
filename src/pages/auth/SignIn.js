@@ -18,8 +18,8 @@ import {pink} from "@material-ui/core/colors";
 import {Star as StarIcon} from "@material-ui/icons";
 import {users_list} from "../../data/users";
 import {setUser} from "../../redux/actions/userActions";
+import ls from 'local-storage';
 const Button = styled(MuiButton)(spacing);
-
 const Wrapper = styled(Paper)`
   padding: ${props => props.theme.spacing(6)}px;
 
@@ -45,7 +45,7 @@ function checkAuth(user, password) {
     var my_user = users_list[i];
     console.log("name" +my_user.user_name.toString());
     console.log(my_user.user_password);
-    if ((my_user.user_name == user) && (my_user.user_password == password)) {
+    if ((my_user.user_name == user) && (my_user.user_password == password))  {
       return true;
     }
   }
@@ -80,6 +80,9 @@ class SignIn extends Component{
     }
     else {
       this.props.dispatch(setUser(this.state.user));
+      ls.set("currentLoggedUser",this.state.user.toString());
+      let currDate = new Date()
+      ls.set("lastLoginDate",currDate);
     }
   }
   componentWillMount() {
@@ -96,8 +99,7 @@ class SignIn extends Component{
           <BigAvatar alt="Guest"> <StarIcon/></BigAvatar>
 
           <Typography component="h1" variant="h4" align="center" gutterBottom>
-            Welcome user, please log in !
-            {this.state.data?this.state.data[0].title.toString():"Still Fetching"}
+            Welcome user, please log in or <Link to="sign-up"> sign up</Link> !
             {console.log(this)}
           </Typography>
           <Typography component="h2" variant="body1" align="center">
@@ -118,28 +120,17 @@ class SignIn extends Component{
                   onChange={this.handleChange("password")}
               />
             </FormControl>
-            <FormControlLabel
-                control={<Checkbox value="remember" color="primary"/>}
-                label="Remember me"
-            />
+
             <Button
                 fullWidth
                 component={Link}
-                to = "/main_site/MainPage"
+                to = "/"
                 variant="contained"
                 color="primary"
                 mb={2}
                 onClick = {this.handleSubmit}
             >
               Sign in {this.state.user.toString()}
-            </Button>
-            <Button
-                component={Link}
-                to="/auth/reset-password"
-                fullWidth
-                color="primary"
-            >
-              Forgot password
             </Button>
           </form>
         </Wrapper>

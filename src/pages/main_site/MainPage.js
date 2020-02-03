@@ -14,7 +14,7 @@ import {
     Link,
     Typography as MuiTypography
 } from "@material-ui/core";
-
+import { Link as RouterLink } from "react-router-dom";
 import { spacing } from "@material-ui/system";
 
 import dragula from "react-dragula";
@@ -23,6 +23,10 @@ import users from "../../data/users.json";
 import list_of_three_things from "../../data/list_of_three_things.json";
 import { connect } from "react-redux";
 import { setUser } from "../../redux/actions/userActions";
+import {green} from "@material-ui/core/colors";
+import {
+    PlusSquare as AddIcon } from "react-feather";
+
 const NavLink = React.forwardRef((props, ref) => (
     <RouterNavLink innerRef={ref} {...props} />
 ));
@@ -55,6 +59,18 @@ const Avatar = styled(MuiAvatar)`
   width: 32px;
 `;
 
+
+const BigAvatar =styled(MuiAvatar)`
+  float: right;
+  margin-left: ${props => props.theme.spacing(1)}px;
+  height: 64px;
+  width: 64px;
+`;
+
+const BigGreenAvatar = styled(BigAvatar)`
+  background-color: ${green[500]};
+`;
+
 class Lane extends React.Component {
     handleContainerLoaded = container => {
         if (container) {
@@ -80,6 +96,29 @@ class Lane extends React.Component {
         );
     }
 }
+class UserLane extends React.Component {
+
+    constructor(props){
+        super(props);
+    }
+
+    render() {
+        var rules = this.props.rules;
+        return (
+            ((rules==null) || (rules.length==0)) ? null: (
+                <Grid item xs={8} lg={8} xl={8}>
+                    <Lane
+                        title="Current User Rules"
+                        description="All my rules"
+                        onContainerLoaded={this.props.onContainerLoaded}
+                    >
+                        {rules.map(rule => <ThreeRule rule={rule}/>)}
+                    </Lane>
+                </Grid>
+            )
+        )
+    }
+}
 
 function Task({ description, avatar }) {
     return (
@@ -99,6 +138,7 @@ function Task({ description, avatar }) {
 }
 
 
+
 class MainPage extends React.Component {
     constructor(props) {
         super(props);
@@ -107,75 +147,83 @@ class MainPage extends React.Component {
             top_three : null,
             hot_rules : null,
             current_user_rules :null,
+            loading_top_three :true
         }
     }
 
     onContainerReady = container => {
         this.containers.push(container);
     };
-
     componentDidMount() {
-        dragula(this.containers);
-        fetch("http://localhost:8199/list_of_things/?author=mishu").then(response=>response.json()).then((json) =>
+
+        fetch("http://localhost:8199/list_of_things/?author="+this.props.user_info.currentUser).then(response=>response.json()).then((json) =>
         {
             console.log(json);
-            this.setState({current_user_rules:json})
+            this.setState({current_user_rules:json});
         });
         fetch("http://localhost:8199/list_of_things/?_sort=votes_positivie&_limit=3").then(response=>response.json()).then((json) =>
         {
             console.log(json);
-            this.setState({top_three:json})
+            this.setState({top_three:json,  loading_top_three :false});
         });
-        fetch("http://localhost:8199/list_of_things/?_sort=hotness&_order=asc&_limit=3").then(response=>response.json()).then((json) =>
+        fetch("http://localhost:8199/list_of_things/?_sort=hotness&_limit=3").then(response=>response.json()).then((json) =>
         {
             console.log(json);
-            this.setState({hot_rules:json})
+            this.setState({hot_rules:json});
         });
-
     }
 
     render() {
         const empty_rule = {
             "id": 2,
-            "title" : "Three rules for Great Shape",
-            "things" :["Wake Up Early", "Do 100 push-ups", "Do not eat all the fridge"],
-            "author_id" : 2,
+            "title" : "Empty Rule",
+            "things" :["Empty", "Empty", "Empty"],
+            "author" : "mishu",
             "votes_positive" : 1,
             "votes_negative" : 0,
             "hotness": 2
         }
+        const loading_top_three = this.state.loading_top_three;
+        console.log("loading_top_three");
+        console.log(loading_top_three);
         return (
         <React.Fragment>
             {console.log(this.state)}
             <Typography variant="h3" gutterBottom display="inline"  align-items={"center"} justify={"center"}>
-                Welcome to three things, {this.props.user_info.currentUser.toString()} !
+                Welcome to three things, {this.props.user_info.currentUser.toString()}! Add your best rule!
             </Typography>
+            <RouterLink to="/create-rule"> <BigGreenAvatar mx ="4"> <AddIcon/>  </BigGreenAvatar></RouterLink>
             <Divider my={6} />
 
             <Grid container spacing={12} align-items={"center"} justify={"center"}>
                 <Grid item xs={8} lg={8} xl={8} >
-
                     <Lane
-                        title="Top 3 Rules Overall"
+                        title="Hot rules"
+                        description="New and popular rules"
                         onContainerLoaded={this.onContainerReady}
                     >
-                        <ThreeRule rule={this.state.top_three==null?empty_rule:this.state.top_three[0] }/>
-                        <ThreeRule rule={this.state.top_three==null?empty_rule:this.state.top_three[1] }/>
-                        <ThreeRule rule={this.state.top_three==null?empty_rule:this.state.top_three[2] }/>
+                        <ThreeRule rule={loading_top_three?empty_rule:this.state.top_three[0] }/>
+                        <ThreeRule rule={loading_top_three?empty_rule:this.state.top_three[1] }/>
+                        <ThreeRule rule={loading_top_three?empty_rule:this.state.top_three[2] }/>
+
                     </Lane>
+
                 </Grid>
 
                 <Grid item xs={8} lg={8} xl={8} >
                     <Lane
                         title="Hot rules"
-                        description="New and popular rules"adrianuser
+                        description="New and popular rules"
                         onContainerLoaded={this.onContainerReady}
                     >
-                        <ThreeRule rule={this.state.hot_rules==null?empty_rule:this.state.top_three[0] }/>
-                        <ThreeRule rule={this.state.hot_rules==null?empty_rule:this.state.top_three[1] }/>
-                        <ThreeRule rule={this.state.hot_rules==null?empty_rule:this.state.top_three[2] }/>
+                        <ThreeRule rule={this.state.hot_rules==null?empty_rule:this.state.hot_rules[0] }/>
+                        <ThreeRule rule={this.state.hot_rules==null?empty_rule:this.state.hot_rules[1] }/>
+                        <ThreeRule rule={this.state.hot_rules==null?empty_rule:this.state.hot_rules[2] }/>
                     </Lane>
                 </Grid>
+                <UserLane rules = {this.state.current_user_rules}
+                          onContainerLoaded={this.onContainerReady}
+                />
             </Grid>
         </React.Fragment>
     )
