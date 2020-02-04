@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="984093f6-37d5-42e5-ad3a-135affb516bc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -81,7 +80,7 @@
       <workItem from="1580642167105" duration="9386000" />
       <workItem from="1580658908423" duration="9264000" />
       <workItem from="1580738023851" duration="17313000" />
-      <workItem from="1580762565377" duration="12506000" />
+      <workItem from="1580762565377" duration="13348000" />
     </task>
     <task id="LOCAL-00001" summary="First version with Logins">
       <created>1580165394466</created>
@@ -132,7 +131,21 @@
       <option name="project" value="LOCAL" />
       <updated>1580773446890</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Changed http adress for json server to 127.0.0.1">
+      <created>1580775499321</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1580775499321</updated>
+    </task>
+    <task id="LOCAL-00009" summary="change ip">
+      <created>1580775562343</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1580775562343</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -145,14 +158,15 @@
     <MESSAGE value="Login and add elements" />
     <MESSAGE value="Add Delete and edit rules" />
     <MESSAGE value="Changed http adress for json server to 127.0.0.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed http adress for json server to 127.0.0.1" />
+    <MESSAGE value="change ip" />
+    <option name="LAST_COMMIT_MESSAGE" value="change ip" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="612" y="304" width="1389" height="617" key="CommitChangelistDialog2" timestamp="1580775499242">
+    <state x="612" y="304" width="1389" height="617" key="CommitChangelistDialog2" timestamp="1580775562262">
       <screen x="67" y="27" width="3373" height="1413" />
     </state>
     <state x="2230" y="212" width="1389" height="617" key="CommitChangelistDialog2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1580758305409" />
-    <state x="612" y="304" width="860" height="807" key="CommitChangelistDialog2/67.27.3373.1413/3440.0.1920.1080@67.27.3373.1413" timestamp="1580775499242" />
+    <state x="612" y="304" width="860" height="807" key="CommitChangelistDialog2/67.27.3373.1413/3440.0.1920.1080@67.27.3373.1413" timestamp="1580775562262" />
     <state x="2696" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1580208635247">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -177,11 +191,11 @@
       <screen x="67" y="27" width="3373" height="1413" />
     </state>
     <state x="1979" y="367" key="SettingsEditor/67.27.3373.1413/3440.0.1920.1080@67.27.3373.1413" timestamp="1580762910412" />
-    <state x="642" y="444" width="572" height="404" key="Vcs.Push.Dialog.v2" timestamp="1580773451605">
+    <state x="642" y="444" width="572" height="404" key="Vcs.Push.Dialog.v2" timestamp="1580776380982">
       <screen x="67" y="27" width="3373" height="1413" />
     </state>
     <state x="2247" y="319" width="572" height="404" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1580758324940" />
-    <state x="642" y="444" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.3373.1413/3440.0.1920.1080@67.27.3373.1413" timestamp="1580773451605" />
+    <state x="642" y="444" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.3373.1413/3440.0.1920.1080@67.27.3373.1413" timestamp="1580776380982" />
     <state x="164" y="126" width="1726" height="1215" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1580771525406">
       <screen x="67" y="27" width="3373" height="1413" />
     </state>
