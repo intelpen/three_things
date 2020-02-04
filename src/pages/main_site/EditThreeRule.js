@@ -71,7 +71,7 @@ class EditThreeRule extends Component{
     componentDidMount() {
         console.log(this.props.match.params.id);
         console.log(this.props.location.state);
-        fetch("http://127.0.0.1:3299/list_of_things/"+this.props.match.params.id).then(response=>response.json()).then((rule_json) =>
+        fetch("http://intelpen.data-science.news:3299/list_of_things/"+this.props.match.params.id).then(response=>response.json()).then((rule_json) =>
         {   console.log("Rule Json");
             console.log(rule_json);
             this.setState({rule:rule_json});
@@ -96,7 +96,7 @@ class EditThreeRule extends Component{
         var jsonified_rule = JSON.stringify(rule);
         console.log("json rule")
         console.log(jsonified_rule)
-        fetch("http://127.0.0.1:3299/list_of_things/"+ rule.id ,{
+        fetch("http://intelpen.data-science.news:3299/list_of_things/"+ rule.id ,{
             "body": jsonified_rule,
             "headers":{
                 "Accept":"application/json",

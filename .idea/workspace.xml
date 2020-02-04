@@ -148,11 +148,11 @@
     <option name="LAST_COMMIT_MESSAGE" value="Changed http adress for json server to 127.0.0.1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="612" y="304" width="1389" height="617" key="CommitChangelistDialog2" timestamp="1580773446792">
+    <state x="612" y="304" width="1389" height="617" key="CommitChangelistDialog2" timestamp="1580775499242">
       <screen x="67" y="27" width="3373" height="1413" />
     </state>
     <state x="2230" y="212" width="1389" height="617" key="CommitChangelistDialog2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1580758305409" />
-    <state x="612" y="304" width="860" height="807" key="CommitChangelistDialog2/67.27.3373.1413/3440.0.1920.1080@67.27.3373.1413" timestamp="1580773446792" />
+    <state x="612" y="304" width="860" height="807" key="CommitChangelistDialog2/67.27.3373.1413/3440.0.1920.1080@67.27.3373.1413" timestamp="1580775499242" />
     <state x="2696" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1580208635247">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -200,11 +200,11 @@
     </state>
     <state x="0" y="27" width="1522" height="1011" key="dock-window-1/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1580123639680" />
     <state x="67" y="27" width="2674" height="1357" key="dock-window-1/67.27.3373.1413/3440.0.1920.1080@67.27.3373.1413" timestamp="1580153214519" />
-    <state x="1193" y="397" width="1237" height="704" key="find.popup" timestamp="1580775153960">
+    <state x="1193" y="397" width="1237" height="704" key="find.popup" timestamp="1580775549037">
       <screen x="67" y="27" width="3373" height="1413" />
     </state>
     <state x="2561" y="283" width="704" height="538" key="find.popup/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1580756955338" />
-    <state x="1193" y="397" width="1237" height="704" key="find.popup/67.27.3373.1413/3440.0.1920.1080@67.27.3373.1413" timestamp="1580775153960" />
+    <state x="1193" y="397" width="1237" height="704" key="find.popup/67.27.3373.1413/3440.0.1920.1080@67.27.3373.1413" timestamp="1580775549037" />
     <state x="2577" y="253" key="run.anything.popup" timestamp="1580752104561">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
