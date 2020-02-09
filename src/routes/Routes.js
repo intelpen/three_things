@@ -15,6 +15,7 @@ const SignIn = async(() => import("../pages/auth/SignIn"));
 const CreateThreeRule = async(() => import("../pages/main_site/CreateThreeRule"));
 const EditThreeRule = async(() => import("../pages/main_site/EditThreeRule"));
 const MainPage = async(() => import("../pages/main_site/MainPage"));
+
 const childRoutes = (Layout, routes) =>
     routes.map(({ children, path, component: Component }, index) =>
         children ? (
@@ -99,6 +100,7 @@ class Routes extends Component {
                             </MainPageLayout>
                         )}
                     />
+                    childRoutes(DashboardLayout, dashboardRoutes)
                     <Route
                         path="/sign-in"
                         exact

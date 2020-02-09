@@ -106,7 +106,7 @@ class UserLane extends React.Component {
         var rules = this.props.rules;
         return (
             ((rules==null) || (rules.length==0)) ? null: (
-                <Grid item xs={8} lg={8} xl={8}>
+                <Grid item xs={12} lg={8} xl={8}>
                     <Lane
                         title="Current User Rules"
                         description="All my rules"
@@ -149,7 +149,7 @@ class MainPage extends React.Component {
             current_user_rules :null,
             loading_top_three :true
         }
-        this.handleDeleteChild = this.handleDeleteChild.bind(this);
+        this.handleRefreshChilds = this.handleRefreshChilds.bind(this);
         this.reloadDataFromServer = this.reloadDataFromServer.bind(this);
     }
 
@@ -177,7 +177,7 @@ class MainPage extends React.Component {
         this.reloadDataFromServer()
     }
 
-    handleDeleteChild() {
+    handleRefreshChilds() {
         this.reloadDataFromServer();
     }
     render() {
@@ -203,34 +203,34 @@ class MainPage extends React.Component {
             <Divider my={6} />
 
             <Grid container spacing={12} align-items={"center"} justify={"center"}>
-                <Grid item xs={8} lg={8} xl={8} >
+                <Grid item xs={12} lg={8} xl={8} >
                     <Lane
                         title="Hot rules"
                         description="New and popular rules"
                         onContainerLoaded={this.onContainerReady}
                     >
-                        <ThreeRule rule={loading_top_three?empty_rule:this.state.top_three[0]} handler ={this.handleDeleteChild}/>
-                        <ThreeRule rule={loading_top_three?empty_rule:this.state.top_three[1]} handler ={this.handleDeleteChild}/>
-                        <ThreeRule rule={loading_top_three?empty_rule:this.state.top_three[2]} handler ={this.handleDeleteChild} />
+                        <ThreeRule rule={loading_top_three?empty_rule:this.state.top_three[0]} handler ={this.handleRefreshChilds}/>
+                        <ThreeRule rule={loading_top_three?empty_rule:this.state.top_three[1]} handler ={this.handleRefreshChilds}/>
+                        <ThreeRule rule={loading_top_three?empty_rule:this.state.top_three[2]} handler ={this.handleRefreshChilds} />
 
                     </Lane>
 
                 </Grid>
 
-                <Grid item xs={8} lg={8} xl={8} >
+                <Grid item xs={12} lg={8} xl={8} >
                     <Lane
                         title="Hot rules"
                         description="New and popular rules"
                         onContainerLoaded={this.onContainerReady}
                     >
-                        <ThreeRule rule={this.state.hot_rules==null?empty_rule:this.state.hot_rules[0] } handler ={this.handleDeleteChild} />
-                        <ThreeRule rule={this.state.hot_rules==null?empty_rule:this.state.hot_rules[1] } handler ={this.handleDeleteChild} />
-                        <ThreeRule rule={this.state.hot_rules==null?empty_rule:this.state.hot_rules[2] } handler ={this.handleDeleteChild} />
+                        <ThreeRule rule={this.state.hot_rules==null?empty_rule:this.state.hot_rules[0] } handler ={this.handleRefreshChilds} />
+                        <ThreeRule rule={this.state.hot_rules==null?empty_rule:this.state.hot_rules[1] } handler ={this.handleRefreshChilds} />
+                        <ThreeRule rule={this.state.hot_rules==null?empty_rule:this.state.hot_rules[2] } handler ={this.handleRefreshChilds} />
                     </Lane>
                 </Grid>
                 <UserLane rules = {this.state.current_user_rules}
                           onContainerLoaded={this.onContainerReady}
-                          handler ={this.handleDeleteChild}
+                          handler ={this.handleRefreshChilds}
                 />
             </Grid>
         </React.Fragment>
