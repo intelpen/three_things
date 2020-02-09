@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="984093f6-37d5-42e5-ad3a-135affb516bc" name="Default Changelist" comment="change ip">
+    <list default="true" id="984093f6-37d5-42e5-ad3a-135affb516bc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/auth/SignIn.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/auth/SignIn.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/main_site/CreateThreeRule.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/main_site/CreateThreeRule.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/main_site/EditThreeRule.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/main_site/EditThreeRule.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/main_site/MainPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/main_site/MainPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/main_site/ThreeRule.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/main_site/ThreeRule.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/Routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/Routes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,6 +78,7 @@
       <workItem from="1580762565377" duration="13348000" />
       <workItem from="1580807493763" duration="599000" />
       <workItem from="1581258454690" duration="12375000" />
+      <workItem from="1581270872871" duration="1068000" />
     </task>
     <task id="LOCAL-00001" summary="First version with Logins">
       <created>1580165394466</created>
@@ -149,7 +143,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580775562343</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="added share and likes">
+      <created>1581271048458</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1581271048458</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -163,15 +164,16 @@
     <MESSAGE value="Add Delete and edit rules" />
     <MESSAGE value="Changed http adress for json server to 127.0.0.1" />
     <MESSAGE value="change ip" />
-    <option name="LAST_COMMIT_MESSAGE" value="change ip" />
+    <MESSAGE value="added share and likes" />
+    <option name="LAST_COMMIT_MESSAGE" value="added share and likes" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="612" y="304" width="1389" height="617" key="CommitChangelistDialog2" timestamp="1581270825083">
+    <state x="612" y="304" width="860" height="807" key="CommitChangelistDialog2" timestamp="1581271048263">
       <screen x="67" y="27" width="3373" height="1413" />
     </state>
     <state x="2230" y="212" width="1389" height="617" key="CommitChangelistDialog2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1580758305409" />
     <state x="612" y="304" width="860" height="807" key="CommitChangelistDialog2/67.27.3373.1413/3440.0.1920.1080@67.27.3373.1413" timestamp="1580776391824" />
-    <state x="612" y="304" key="CommitChangelistDialog2/67.27.3373.1413/3440.360.1920.1080@67.27.3373.1413" timestamp="1581270825083" />
+    <state x="612" y="304" width="860" height="807" key="CommitChangelistDialog2/67.27.3373.1413/3440.360.1920.1080@67.27.3373.1413" timestamp="1581271048263" />
     <state x="1430" y="433" width="424" height="484" key="FileChooserDialogImpl" timestamp="1581265516305">
       <screen x="67" y="27" width="3373" height="1413" />
     </state>
@@ -197,11 +199,12 @@
       <screen x="67" y="27" width="3373" height="1413" />
     </state>
     <state x="1979" y="367" key="SettingsEditor/67.27.3373.1413/3440.0.1920.1080@67.27.3373.1413" timestamp="1580762910412" />
-    <state x="642" y="444" width="572" height="404" key="Vcs.Push.Dialog.v2" timestamp="1580776397410">
+    <state x="642" y="444" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1581272408565">
       <screen x="67" y="27" width="3373" height="1413" />
     </state>
     <state x="2247" y="319" width="572" height="404" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1580758324940" />
     <state x="642" y="444" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.3373.1413/3440.0.1920.1080@67.27.3373.1413" timestamp="1580776397410" />
+    <state x="642" y="444" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.3373.1413/3440.360.1920.1080@67.27.3373.1413" timestamp="1581272408565" />
     <state x="164" y="126" width="1726" height="1215" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1580771525406">
       <screen x="67" y="27" width="3373" height="1413" />
     </state>

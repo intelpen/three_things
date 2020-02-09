@@ -205,13 +205,12 @@ class MainPage extends React.Component {
             <Grid container spacing={12} align-items={"center"} justify={"center"}>
                 <Grid item xs={12} lg={8} xl={8} >
                     <Lane
-                        title="Hot rules"
-                        description="New and popular rules"
+                        title="Top rules"
+                        description="Most Voted Rules"
                         onContainerLoaded={this.onContainerReady}
                     >
                         <ThreeRule rule={loading_top_three?empty_rule:this.state.top_three[0]} handler ={this.handleRefreshChilds}/>
                         <ThreeRule rule={loading_top_three?empty_rule:this.state.top_three[1]} handler ={this.handleRefreshChilds}/>
-                        <ThreeRule rule={loading_top_three?empty_rule:this.state.top_three[2]} handler ={this.handleRefreshChilds} />
 
                     </Lane>
 
@@ -225,7 +224,6 @@ class MainPage extends React.Component {
                     >
                         <ThreeRule rule={this.state.hot_rules==null?empty_rule:this.state.hot_rules[0] } handler ={this.handleRefreshChilds} />
                         <ThreeRule rule={this.state.hot_rules==null?empty_rule:this.state.hot_rules[1] } handler ={this.handleRefreshChilds} />
-                        <ThreeRule rule={this.state.hot_rules==null?empty_rule:this.state.hot_rules[2] } handler ={this.handleRefreshChilds} />
                     </Lane>
                 </Grid>
                 <UserLane rules = {this.state.current_user_rules}
